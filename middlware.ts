@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";    
-import { default } from "next-auth/middleware"
+// import { default } from "next-auth/middleware"
+import { default } from 'next-auth/middleware'
 import { getToken } from "next-auth/jwt";
 
 
@@ -15,9 +16,8 @@ export async function middleware(request: NextRequest) {
             url.pathname.startsWith('/verify') ||
             url.pathname.startsWith('/') ||
 
-
-
         )
+        
     ) {
         return NextResponse.redirect(new URL('/dashboard', request.url))
 
